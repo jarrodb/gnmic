@@ -287,6 +287,14 @@ func (a *App) handleClusteringGet(w http.ResponseWriter, r *http.Request) {
 	w.Write(b)
 }
 
+func (a *App) handleLivezGet(w http.ResponseWriter, r *http.Request) {
+	w.Write("")
+}
+
+func (a *App) handleReadyzGet(w http.ResponseWriter, r *http.Request) {
+	w.Write("")
+}
+
 func (a *App) handleClusteringMembersGet(w http.ResponseWriter, r *http.Request) {
 	if a.Config.Clustering == nil {
 		return
