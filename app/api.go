@@ -288,11 +288,11 @@ func (a *App) handleClusteringGet(w http.ResponseWriter, r *http.Request) {
 }
 
 func (a *App) handleLivezGet(w http.ResponseWriter, r *http.Request) {
-	w.Write("")
+	w.Write([]byte("I'm alive!"))
 }
 
 func (a *App) handleReadyzGet(w http.ResponseWriter, r *http.Request) {
-	w.Write("")
+	w.Write([]byte("I'm ready!"))
 }
 
 func (a *App) handleClusteringMembersGet(w http.ResponseWriter, r *http.Request) {
