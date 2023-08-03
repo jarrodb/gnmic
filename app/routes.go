@@ -19,7 +19,12 @@ func (a *App) routes() {
 	a.clusterRoutes(apiV1)
 	a.configRoutes(apiV1)
 	a.targetRoutes(apiV1)
+	a.healthRoutes(apiV1)
+}
 
+func (a *App) healthRoutes(r *mux.Router) {
+	r.HandleFunc("/livez", a.handleLivezGet).Methods(http.MethodGet)
+	r.HandleFunc("/readyz", a.handleReadyzGet).Methods(http.MethodGet)
 }
 
 func (a *App) clusterRoutes(r *mux.Router) {
